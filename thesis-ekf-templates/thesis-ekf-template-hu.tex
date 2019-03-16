@@ -127,7 +127,31 @@ Ezek a kötések térbeli helyzetei határozzák meg a molekula tényleges alakj
 
 Kötéstávolság a két kötő atom atommagjának távolsága a molekulában. Minél több kötés jön létre a távolság annál kisebb lesz. A kötésszög a kapcsolódó atomok által bezárt szög, azaz atommagot gondolatban összekötő egyeneséhez képest. \cite{eke_kemia_ppt}
 \chapter{Unity és a fejlesztői lehetőségek}
-min 2 oldal
+%min 2 oldal
+A játék elkészítése előtt el keltet döntetni, hogy milyen nyelven és milyen fejlesztőkörnyezet segítségével írjuk meg a szoftvert. Mivel mindenképp háromdimenziós modellezés szükséges, valamint könnyű, látványos és dinamikus felületet szerettünk volna, így egyértelművé vált, hogy olyan programnyelvet kellet keresni, amivel egyszerűen lehet kezelni különféle objektumokat, amiknek más és más tulajdonságai vannak. Azaz mindenféleképpen olyan nyelvet kellet választani, amiben az objektum orientáltságot hatékonyan lehet implementálni. Ezzel ki lett zárva a C, Basic, valamint a különféle script nyelvek, mint a Python is. A C++ támogatja az objektum orientáltságot, viszont ahhoz, hogy hatékonyan tudjam vele kezelni a modelleket, és az eseményeket nagy mélységben kellet volna a programnyelvet megismerni, amihez viszont nem volt elég idő. 
+
+Ezen megkötések mellett a C\# valamint a Java maradt, mint lehetséges programnyelv. Mindkettő hatékonyan kezeli az objektumorientáltságot valamint fellelhetőek hozzájuk olyan fejlesztőkörnyezetek, amikkel könnyedén lehet a dinamikus felületeket programozni.
+
+A ké programnyelv közül végül a C\#-ot választottam, ugyanis ezt a nyelvet ismertem a legjobban, illetve a választott fejlesztőkörnyezet nagymértékben támogatja a használatát.
+
+\section{Játék Enginek}
+
+Pár szóban mik azok a játék enginek, és milyen ingyenes enginekhez férhet hozzá egy hallgató. A game enginek( magyarul legjobban talán játék motornak fordítható) nem mások, mint komplex kiterjedt szoftver rendszerek, amik már eleve tartalmazzák az olyan komponenseket, mint például a rendereket, kamerákat, fizikai motorokat, ütközés érzékeléseket, hang kezeléseket, kép, illetve modell, szálak és a hálózat kezelését.\cite{wiki_game_engine} Így a játékfejlesztőknek nem kell az alapokról kezdeni a fejlesztést, ami ilyen komplex rendszereknél akár éveket is igénybe vehet, optimalizálással együtt. Valamint egy ilyen játék motor megírásához jelentős szakmai tapasztalattal rendelkező programozók szükségesek különböző területi ágakról.
+
+Viszont előre megírt és optimalizált motorok segítségével akár a vállalkozóbb kedvű fejlesztők is tudják publikálni záros időn belül játékukat, mert annak csak dinamikájával, történetével és modelljeivel kell foglalkozniuk.  
+
+A játék motorokat ezért is nevezik middlewarenek (köztes szoftvernek), mivel könnyen újrahasznosítható, hajlékony platformot biztosítanak, ahol az összes szükséges alap funkciókat megtalálhatjuk rögtön telepítés után, ha mégis egyéb más igényeink vannak azokat bármikor elérhetjük a game engine-t biztosító cég weboldaláról beépülő modulként implementálva.
+Főbb komponensei: (Természetesen ennél sokkal több modullal rendelkezik mindegyik játék motor, de ezek az alapok) \cite{wiki_game_engine}
+\begin{itemize}
+	\item \textbf{Fő logika}: (Main game program) A játék tényleges logikája, ami különböző algoritmusokkal van megvalósítva, és teljesen független a rendereléssel, hanggal és háttér adatbázissal foglalkozó programrészektől.\cite{wiki_game_engine}
+	\item \textbf{Renderelő motor}: A renderelő motor generálja a 3D grafikát valamilyen módszert használva mint például a rasszterelés, ami vektorgrafikus alakzatokat alakít át képpé,\cite{wiki_raszt} vagy a ray-traceing, ami úgy generál képet, hogy leköveti a fény útját az adott képsíkon mint pixelt és úgy szimulálja a hatásokat más virtuális objektumokkal való interakciójakor.\cite{wiki_ray} Ezek a technikák csak néhány a sok közül.
+	Ezeket a motorokat ahelyett, hogy leprogramoznák és lefordítanák, majd futtatnák a CPU-n vagy a GPU-n, a legtöbb renderelő motor egy vagy több API-ra (Application Programming Interface: olyan jól definiált szubrutinok, protokollok és eszközök gyűjteménye, amely megkönnyíti a különböző részek közötti átjárást) épül, mint pl. a Direct3D vagy az OpenGl.
+	Gyakran használnak alacsony szintű könyvtárszerkezeteket - ilyen az OpenGl is - melyek lehetővé teszik a hardver független hozzáférést a beviteli eszközökhöz, hangkártyákhoz és hálókártyákhoz.
+	Manapság elterjedtebb technológia a hardveresen gyorsított 3D grafika, a jobb teljesítményű hardvernek köszönhetően, ez által jobb a valós idejű teljesítmény (kép per másodperc). Elődje, de még manapság is használt technológia a szoftveres renderelés, ezt akkor használják ha nincs meg a szükséges hardver, vagy fontosabb vizuális pontosság.\cite{wiki_game_engine}
+	\item \textbf{Hang motor}: Olyan komponens, ami a hang betöltéséhez, módosításához és a játékos hangrendszerének inputjára küldéséhez szükséges algoritmusokból épül fel. A legalapvetőbb hang motorok betudják tölteni, kitudják tömöríteni illetve letudják játszani a hangot. A kicsivel fejlettebb rendszerek már kitudják számolni a Dopler effektushoz szükséges hangsávokat (Dopler effetus:A hanghullám frekvenciájában történő változás. A változás mértéke függ attól, hogy a hullámforrás és a megfigyelő egymáshoz képest hogyan mozog.\cite{wiki_dop}), visszhangokat tudnak generálni. \cite{wiki_game_engine}
+	\item \textbf{Fizikai motor}:Ő felelős azért, hogy a fizika törvényei jelen legyenek a játékokban. Olyan funkciókat biztosít amikkel könnyen lehet szimulálni különböző fizikai törvényeket(pl gravitáció, diffúzió, stb) valamint ütközéseket a játék futása közben.\cite{wiki_game_engine}
+	\item \textbf{Mesterséges intelligencia}: Talán ez a modul a legváltozatosabb. Általában a fő logikától függetlenül egy saját kis modulként épül ki, különböző speciális tudással rendelkező programozók közreműködésével. Általános AI-t, ami nagyobb és komplexebb mesterséges intelligenciához tartozó algoritmusokat tartalmaz nehezen találunk az alapértelmezett játék motorban. Ennek oka az, hogy minden játék saját specifikus AI-t igényel. Ez az igény függ a játék típusától (MMORP, FPS, TPS, RTS,TBS), illetve attól, hogy milyen nehézségi szintekkel operál. 
+\end{itemize}
 \chapter{Chemist}
 \section{Általános leírás}
 min 2 oldal
@@ -155,5 +179,9 @@ min 2 oldal
 	\bibitem{angol_en} \url{https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/Atomic_and_Molecular_Properties/Electronegativity/Allred-Rochow_Electronegativity} (Hozzáférés ideje: 2019.03.12).
 	\bibitem{eke_kemia_ppt} \textsc{Eszterházy Károly Egyetem}: \url{kemia.ektf.hu/kemiai_kotesek.ppt} (Hozzáférés ideje: 2019.01.31).
 	\bibitem{wiki_femes} \textsc{Wikipédia}: \url{https://hu.wikipedia.org/wiki/Fémes_kötés} (Hozzáférés ideje: 2019.01.31).
+	\bibitem{wiki_game_engine} \textsc{Wikipédia}: \url{https://en.wikipedia.org/wiki/Game_engine} (Hozzáférés ideje: 2019.03.16).
+	\bibitem{wiki_dop} \textsc{Wikipédia}: \url{https://hu.wikipedia.org/wiki/Doppler-effektus} (Hozzáférés ideje: 2019.03.16).
+	\bibitem{wiki_ray} \textsc{Wikipédia}: \url{https://en.wikipedia.org/wiki/Ray_tracing_(graphics)} (Hozzáférés ideje: 2019.03.16).
+	\bibitem{wiki_raszt} \textsc{Wikipédia}: \url{https://en.wikipedia.org/wiki/Rasterisation} (Hozzáférés ideje: 2019.03.16).
 \end{thebibliography}
 \end{document}
