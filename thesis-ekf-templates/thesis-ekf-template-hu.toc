@@ -7,13 +7,16 @@
 \select@language {magyar} \contentsline {section}{\numberline {3.4}Kovalens k\IeC {\"o}t\IeC {\'e}s}{8}{section.3.4}
 \select@language {magyar} \contentsline {chapter}{\numberline {4}Unity \IeC {\'e}s a fejleszt\IeC {\H o}i lehet\IeC {\H o}s\IeC {\'e}gek}{10}{chapter.4}
 \select@language {magyar} \contentsline {section}{\numberline {4.1}J\IeC {\'a}t\IeC {\'e}k Enginek}{10}{section.4.1}
-\select@language {magyar} \contentsline {chapter}{\numberline {5}Chemist}{13}{chapter.5}
-\select@language {magyar} \contentsline {section}{\numberline {5.1}\IeC {\'A}ltal\IeC {\'a}nos le\IeC {\'\i }r\IeC {\'a}s}{13}{section.5.1}
-\select@language {magyar} \contentsline {section}{\numberline {5.2}Modulok}{13}{section.5.2}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Men\IeC {\"u}}{13}{subsection.5.2.1}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Peri\IeC {\'o}dusos rendszer}{13}{subsection.5.2.2}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.3}Shader}{13}{subsection.5.2.3}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.4}F\IeC {\'e}mes \IeC {\'e}s inos k\IeC {\"o}t\IeC {\'e}s modellje, \IeC {\'e}s m\IeC {\H u}k\IeC {\"o}d\IeC {\'e}se}{13}{subsection.5.2.4}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.5}Kovalens k\IeC {\"o}t\IeC {\'e}s}{13}{subsection.5.2.5}
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Tov\IeC {\'a}bbfejleszt\IeC {\'e}si lehet\IeC {\H o}s\IeC {\'e}gek}{14}{chapter.6}
-\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\'A}br\IeC {\'a}k jegyz\IeC {\'e}ke}{15}{chapter.7}
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}CryEngine}{12}{subsection.4.1.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Unreal Engine 4}{13}{subsection.4.1.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.3}Unity}{13}{subsection.4.1.3}
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Chemist}{16}{chapter.5}
+\select@language {magyar} \contentsline {section}{\numberline {5.1}\IeC {\'A}ltal\IeC {\'a}nos le\IeC {\'\i }r\IeC {\'a}s}{16}{section.5.1}
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Modulok}{16}{section.5.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Men\IeC {\"u}}{16}{subsection.5.2.1}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Peri\IeC {\'o}dusos rendszer}{16}{subsection.5.2.2}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.3}Shader}{16}{subsection.5.2.3}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.4}F\IeC {\'e}mes \IeC {\'e}s inos k\IeC {\"o}t\IeC {\'e}s modellje, \IeC {\'e}s m\IeC {\H u}k\IeC {\"o}d\IeC {\'e}se}{16}{subsection.5.2.4}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.5}Kovalens k\IeC {\"o}t\IeC {\'e}s}{16}{subsection.5.2.5}
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Tov\IeC {\'a}bbfejleszt\IeC {\'e}si lehet\IeC {\H o}s\IeC {\'e}gek}{17}{chapter.6}
+\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\'A}br\IeC {\'a}k jegyz\IeC {\'e}ke}{18}{chapter.7}

@@ -132,7 +132,7 @@ A játék elkészítése előtt el keltet döntetni, hogy milyen nyelven és mil
 
 Ezen megkötések mellett a C\# valamint a Java maradt, mint lehetséges programnyelv. Mindkettő hatékonyan kezeli az objektumorientáltságot valamint fellelhetőek hozzájuk olyan fejlesztőkörnyezetek, amikkel könnyedén lehet a dinamikus felületeket programozni.
 
-A ké programnyelv közül végül a C\#-ot választottam, ugyanis ezt a nyelvet ismertem a legjobban, illetve a választott fejlesztőkörnyezet nagymértékben támogatja a használatát.
+A két programnyelv közül végül a C\#-ot választottam, ugyanis ezt a nyelvet ismertem a legjobban, illetve a választott fejlesztőkörnyezet nagymértékben támogatja a használatát.
 
 \section{Játék Enginek}
 
@@ -152,6 +152,46 @@ Főbb komponensei: (Természetesen ennél sokkal több modullal rendelkezik mind
 	\item \textbf{Fizikai motor}:Ő felelős azért, hogy a fizika törvényei jelen legyenek a játékokban. Olyan funkciókat biztosít amikkel könnyen lehet szimulálni különböző fizikai törvényeket(pl gravitáció, diffúzió, stb) valamint ütközéseket a játék futása közben.\cite{wiki_game_engine}
 	\item \textbf{Mesterséges intelligencia}: Talán ez a modul a legváltozatosabb. Általában a fő logikától függetlenül egy saját kis modulként épül ki, különböző speciális tudással rendelkező programozók közreműködésével. Általános AI-t, ami nagyobb és komplexebb mesterséges intelligenciához tartozó algoritmusokat tartalmaz nehezen találunk az alapértelmezett játék motorban. Ennek oka az, hogy minden játék saját specifikus AI-t igényel. Ez az igény függ a játék típusától (MMORP, FPS, TPS, RTS,TBS), illetve attól, hogy milyen nehézségi szintekkel operál. 
 \end{itemize}
+A megfelelő játék motor kiválasztásakor három engine került a figyelmembe, a motorok fejlesztő környezetei mind angol nyelvű, angol nyelvű dokumentációval és oktató videókkal, magyarítás nem elérhető egyikre sem. Ezek közül az egyik a CryEngine V volt.
+\subsection{CryEngine}
+A CryEngine V olyan videojáték motor amelyet a német Crytek játék stúdió fejlesztett ki saját játékaihoz. Az első játék ami ezen futott a Far Cry volt. Később a motor folyamatos fejlesztésével a Snow, Warface, Sniper:Ghost Warrior 3 illetve a BattleCry is ezzel készült el. \cite{cry_wiki}
+
+Az motor egészen 2015-ig csak fizetős változatban volt elérhető, de ma már a pay-what-you-want (a felhasználó eldönthetik, hogy mennyit szeretnének fizetni a szoftverért, és az összegnek megfelelően kapnak extra szolgáltatásokat) elvet követve akár ingyenesen is hozzá lehet férni. Mindezek mellet a Crytek ingyenessé tette a szoftver forráskódját, így nagyon sok más különálló fejlesztők által implementált extra funkciókkal bővíthető.
+
+A felület három fő részből áll. A képernyő közepén lévő fő helyet a játék nézetet megjelenítő ablak foglalja el. A felső navigációs sávban a méretező, pozicionáló, forgató és egyéb más gyakran használt eszközök találhatók, amik segítségével tudjuk a nézetben lévő objektumokat manipulálni.
+
+Baloldalon a gyorsmenüvel könnyedén tudunk új objektumokat létrehozni, majd ha azokat a játék képernyőjére helyezzük, automatikusan megjelenik a gyorsmenü alatt elhelyezkedő Level Expolerben az elem neve. Ez konkrétan a játékelemek hierarchikus listája. Jobboldalt az éppen kijelölt objektum részleges szerkesztési felülete látható. Itt minden tulajdonságát szerkeszteni tudjuk, sőt akár el is tudjuk tüntetni a nem kívánt részeket.
+
+A legújabb verzió már támogatja a C\# nyelvet is a C++-on kívül, ezenkívül támogatva a VR platformot is. Gyönyörűen rendeli le a különböző textúrákat, illetve minden platformot támogat a konzolokat és az okos telefonokat is beleértve.\cite{cry}
+
+Választásom viszont azért nem esett erre a motorra, mivel a legtöbb oktató videó ami erre a szoftverre készült még mindig C++ nyelven íródott, valamint az engine arra van inkább felkészítve, hogy FPS (First Person Shouter) játékokat lehessen rajt a legkönnyebben fejleszteni. Más típusú játékok esetén, ahogy az oktató videókat láttam, stabil lábakon álló C++, Flash, ActionSript illetve Luna programozói tudás szükséges.
+\subsection{Unreal Engine 4}
+A második játék motor, ami a figyelmembe került az az Unreal Engine volt. 
+
+Az első játék motor, amit az 1998-as években kiadott Unreal nevű FPS játékhoz készített a Tim Sweeney.\cite{wiki_unreal}Később ezen motor segítségével készült el a Bioshock, a Batman: Arkham Asylum\cite{unreal_game_list} valamint a most idén megjelenő Dragon Hound illetve a Torchlight Frontiers is\cite{unreal_news}
+
+A motor használata teljesen ingyenessé vált, rengeteg ingyenes kiegészítőt lehet elérni oldalukon. Ezen kívül a CryEnginhez hasonlóan támogatja a lehető legtöbb platformot is. Fő nyelve a C++, de a legújabb verzió már támogatja a C\# is. (bár tapasztalatom szerint eléggé bugos még vele) Egyik nagy előnye viszont, hogy a visual scripting elérhető az objektumain, így akár a kevés, vagy szinte semmilyen programozói tudással rendelkezők is tudnak a különböző játék objektumokhoz szkripteket írni.
+
+A fejlesztőkörnyezet kialakítása hasonló a CryEnginhez. Itt is három oszlopra van osztva a képernyő, és a középsőben kap helyet a játék nézet. Ugyanúgy bal oldalon található az objektumok hierarchiája, illetve a jobb oldalon a részletes szerkesztői felület.
+\subsection{Unity}
+Végül a Chemist játék motorja a Unity lett. 
+
+Szintén egy ingyenesen használható játék motor, mely ingyenes vagy évi 1000 dollár bevételt meg nem haladó játékok készítéséhez ajánlott. A CyEnginehez és az Unrealhoz hasonlóan C++ alapú, de jól támogatja a C\# is. A weboldalukon található oktató videóik nagy többsége C\# program nyelven keresztül mutatja be a szkriptek kezelését. Két és háromdimenziós játékok fejlesztésére is kiváló, valamint kezelni tudja a legtöbb modellező szoftver kiterjesztéseit is. \cite{unity_web} 
+
+Úgynevezett Asset Storjának segítségével (ez egy beépülő online bolt különböző kiegészítőkhöz, extra funkciókhoz) bármilyen beépülő modult, vagy kész modelleket, illetve sceneket tudunk letölteni ingyen, vagy pedig valamennyi összegért cserébe.
+
+Egyszerű és testre szabható felülettel rendelkezik. Az előzőekhez hasonlóan alapértelmezetten itt is három fő oszloprészre van osztva a nézet, viszont itt a baloldalon foglal helyet a vizuális szerkesztő, míg középen az objektumok és mappák hierarchiája tekinthető meg, majd a jobb szélen a részletes szerkesztőfelület. Viszont ez a nézet könnyen testre szabható. Nem muszáj ezzel az elrendezéssel dolgoznunk, egyszerű fogd és vidd használatával több függőleges illetve vízszintes részre is darabolhatjuk szét a szoftver nézetét, és ezeken a részeken belül, pedig más menüelemeket tudunk fülekként hozzáadni.
+
+A felület főbb részei:
+\begin{itemize}
+	\item \textbf{Scene:} Ez a vizuális szerkesztő rész. Itt látjuk a játék előnézetét, ez tartalmazza a játékelemeket, amikkel közvetlenül, vagy közvetve kapcsolatba tudunk lépi a játékon keresztül. Itt tudjuk a legegyszerűbben, manuálisan elhelyezni, forgatni illetve nagyítani objektumainkat. Egyszerűen navigálhatunk ebben a térrészben a felső navigációs sávon lévő eszközök segítségével.
+	\item \textbf{Game:} Ha elindítjuk a játékunkat, itt lehet megnézni futás közben. Természetesen a maximalize on play gombbal a teljes képernyőre kerül ki a nézet.
+	\item \textbf{Hierarchy:} Az éppen adott scenen lévő objektumok listáját tartalmazza hierarchikusan. Ez azt jelenti, hogy egy objektumnak lehetnek belső gyerek objektumai is. Ilyenkor a megfelelő nevűt kiválasztva megjelenik egy kis nyilacska, amire ha rákattintunk legördül az összes gyerekelemet tartalmazó lista.
+	\item \textbf{Project:} Itt a teljes projektunk tekinthető meg a tényleges mapparendszerekkel együtt. Ha a fájlkezelőben nyitnánk meg, az Asset mappában találnánk meg ezeket az elemeket. Érdemes itt létrehozni az új mappákat, szkripteket, mivel ezen a felületen könnyen tudjuk rendezgetni fájljainkat.
+	\item \textbf{Inspector:} Bármilyen elem, amely vagy a Hierarchy, vagy a Project részen lett kijelölve, itt teljes körűen szerkeszthető, illetve az adott elem összes tulajdonsága, szkriptek esetén maga a teljes kód látható. Új tulajdonságot vagy bővítményt az Add Component gombbal tudtunk az objektumhoz hozzárendelni. Eltávolítani a már meglévő komponenst az azon lévő kis fogaskerék ikonhoz tartozó Delete menüelem segítségével lehetséges.
+\end{itemize}
+
+A Unity ezen kívül még animálni is tudja az objektumait, legyen az egy modell vagy egy gomb, illetve panel. Be lehet állítani, hogy OpenGl-t vagy pedig a DirectX melyik változatával készítsük el a játékot. Rendkívül rugalmas, és könnyen kezelhető. Ha van a gépünkön Visual Studió, akkor a C\#-ban írt szkripteket automatikusan ezzel nyitja meg. Emellett a debugolást is könnyűvé teszi a Visual Studióba beépített Debug segítségével. Hiba keresés esetén elég, ha a Studióban megnyomjuk az Attach to unity gombot, amivel elindul a szkript futása, ezután ha elindítjuk a játékot a Unity felületén lévő Play gombbal, monitorozni tudjuk a szkript viselkedését játékon belül, töréspontok segítségével. Ezen kívül a motor támogatja még a TDD-t, azaz a Teszt vezérelt fejlesztést is.
 \chapter{Chemist}
 \section{Általános leírás}
 min 2 oldal
@@ -182,6 +222,12 @@ min 2 oldal
 	\bibitem{wiki_game_engine} \textsc{Wikipédia}: \url{https://en.wikipedia.org/wiki/Game_engine} (Hozzáférés ideje: 2019.03.16).
 	\bibitem{wiki_dop} \textsc{Wikipédia}: \url{https://hu.wikipedia.org/wiki/Doppler-effektus} (Hozzáférés ideje: 2019.03.16).
 	\bibitem{wiki_ray} \textsc{Wikipédia}: \url{https://en.wikipedia.org/wiki/Ray_tracing_(graphics)} (Hozzáférés ideje: 2019.03.16).
-	\bibitem{wiki_raszt} \textsc{Wikipédia}: \url{https://en.wikipedia.org/wiki/Rasterisation} (Hozzáférés ideje: 2019.03.16).
+	\bibitem{wiki_raszt} \textsc{Wikipédia}: \url{https://en.wikipedia.org/wiki/Rasterisation} (Hozzáférés ideje: 2019.03.16)
+	.\bibitem{cry_wiki} \textsc{Wikipédia}: \url{https://docs.cryengine.com/display/CEMANUAL/CRYENGINE+V+Reference} (Hozzáférés ideje: 2019.03.16).
+	\bibitem{cry} \textsc{Cryengine}: \url{https://docs.cryengine.com/display/CEMANUAL/CRYENGINE+V+Reference} (Hozzáférés ideje: 2019.03.18).
+	\bibitem{wiki_unreal} \textsc{Wikipédia} \url{https://en.wikipedia.org/wiki/Unreal_Engine} (Hozzáférés ideje: 2019.03.18).
+	\bibitem{unreal_news} \textsc{Unreal} \url{https://www.unrealengine.com/en-US/blog/dozens-of-games-to-be-featured-in-the-unreal-engine-booth-at-gdc-2019} (Hozzáférés ideje: 2019.03.18).
+	\bibitem{unreal_game_list} \textsc{Wikipédia} \url{https://en.wikipedia.org/wiki/List_of_Unreal_Engine_games} (Hozzáférés ideje: 2019.03.18).
+	\bibitem{unity_web} \textsc{Unity} \url{https://unity3d.com/unity?_ga=2.102681794.2102771212.1552910539-416168645.1549027919} (Hozzáférés ideje: 2019.03.18).
 \end{thebibliography}
 \end{document}
