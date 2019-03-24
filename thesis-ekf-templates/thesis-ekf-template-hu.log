@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.2.2)  18 MAR 2019 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.2.2)  24 MAR 2019 19:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -836,118 +836,191 @@ Overfull \hbox (6.8742pt too wide) in paragraph at lines 143--145
 
 [11] [12] [13] [14] [15]
 5. fejezet.
-[16
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16
 
 ]
+
+LaTeX Warning: Citation `unity_link_polish_main' on page 17 undefined on input 
+line 217.
+
+[17]
+
+LaTeX Warning: Citation `unity_link_polish_main' on page 18 undefined on input 
+line 219.
+
+
+LaTeX Warning: Citation `unity_link_polish_main' on page 18 undefined on input 
+line 221.
+
+
+LaTeX Warning: Citation `hangforrás_link' on page 18 undefined on input line 22
+3.
+
+
+LaTeX Warning: Citation `unity_link_polish_main' on page 18 undefined on input 
+line 223.
+
+
+Overfull \hbox (15.95801pt too wide) in paragraph at lines 223--224
+[]\T1/cmr/m/n/12 Ezen kí-vül a me-nü-ben hall-ha-tó han-gok in-gye-nes ro-yal-t
+y free web-ol-dal-ról származnak[[]],
+ []
+
+
+LaTeX Warning: Citation `windos_peritabla' on page 18 undefined on input line 2
+31.
+
+
+Underfull \vbox (badness 1436) has occurred while \output is active []
+
+ [18]
+
+LaTeX Warning: Citation `unity_prefab' on page 19 undefined on input line 239.
+
+
+LaTeX Warning: Citation `unity_scriptable' on page 19 undefined on input line 2
+53.
+
+
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [19]
+
+LaTeX Warning: Citation `unity_scriptable' on page 20 undefined on input line 2
+55.
+
+
+LaTeX Warning: Citation `unity_asset' on page 20 undefined on input line 259.
+
+
+LaTeX Warning: Citation `unity_scriptable' on page 20 undefined on input line 2
+61.
+
+[20]
+Underfull \vbox (badness 4543) has occurred while \output is active []
+
+ [21]
+[22]
 6. fejezet.
-[17
+
+Underfull \vbox (badness 2495) has occurred while \output is active []
+
+ [23
 
 ]
+[24]
 7. fejezet.
-[18
+[25
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 212.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 306.
 
  (d:/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 []\T1/cmr/m/sc/12 Suli Net\T1/cmr/m/n/12 : [][]$\T1/cmtt/m/n/12 https : / / tud
 asbazis . sulinet . hu / hu / termeszettudomanyok /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 \T1/cmtt/m/n/12 kemia / altalanos-[]kemia / az-[]atomok-[]elektronszerkezete /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 [][][]$\T1/cmtt/m/n/12 http : / / web . uni-[]miskolc . hu / ~www _ fiz / majar
  / Oktatas / anyagmernok _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 \T1/cmtt/m/n/12 szervetlen-[]kemia / a-[]vegyertek-[]kapcsolata-[]az-[]elektron
 szerkezettel /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 \T1/cmtt/m/n/12 a-[]vegyertek-[]kapcsolata-[]az-[]elektronszerkezettel$[][] \T1
 /cmr/m/n/12 (Hoz-zá-fé-rés ide-je:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 [][][]$\T1/cmtt/m/n/12 https : / / chem . libretexts . org / Bookshelves / Phys
 ical _ and _ Theoretical _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 \T1/cmtt/m/n/12 Chemistry _ Textbook _ Maps / Supplemental _ Modules _ (Physica
 l _ and _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 \T1/cmtt/m/n/12 Theoretical _ Chemistry ) /Physical _ Properties _ of _ Matter 
 / Atomic _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 \T1/cmtt/m/n/12 and _ Molecular _ Properties / Electronegativity / Allred-[]Roc
 how _
  []
 
-[19
+[26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 []\T1/cmr/m/sc/12 Wikipédia\T1/cmr/m/n/12 : [][]$\T1/cmtt/m/n/12 https : / / en
  . wikipedia . org / wiki / Ray _ tracing _ (graphics)$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
 []\T1/cmr/m/sc/12 Unreal [][]$\T1/cmtt/m/n/12 https : / / www . unrealengine . 
 com / en-[]US / blog /
  []
 
 
-Overfull \hbox (9.7279pt too wide) in paragraph at lines 229--230
+Overfull \hbox (9.7279pt too wide) in paragraph at lines 323--324
 \T1/cmtt/m/n/12 dozens-[]of-[]games-[]to-[]be-[]featured-[]in-[]the-[]unreal-[]
 engine-[]booth-[]at-[]gdc-[]2019$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 []\T1/cmr/m/sc/12 Unity [][]$\T1/cmtt/m/n/12 https : / / unity3d . com / unity 
 ? _ga = 2 . 102681794 . 2102771212 .
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 233.
-[20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 233.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
+[27]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
  (./thesis-ekf-template-hu.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 233.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 233.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
 Package rerunfilecheck Info: File `thesis-ekf-template-hu.out' has not changed.
 
 (rerunfilecheck)             Checksum: A4A97C85510123A880DECD9B7C80566E;3579.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 12312 strings out of 492980
- 173383 string characters out of 6136208
- 265290 words of memory out of 5000000
- 15660 multiletter control sequences out of 15000+600000
- 20264 words of font info for 56 fonts, out of 8000000 for 9000
+ 12333 strings out of 492980
+ 173635 string characters out of 6136208
+ 267358 words of memory out of 5000000
+ 15671 multiletter control sequences out of 15000+600000
+ 20948 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,7n,35p,942b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,7n,35p,1174b,453s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.vegy\351rt\351k_sulinet} has been referenced
  but does not exist, replaced by a fixed one
 
@@ -965,11 +1038,12 @@ x2488.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb>
 e/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/texlive/2017/tex
 mf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><d:/texlive/2017/texmf-dist/fo
 nts/type1/public/cm-super/sfsx2488.pfb><d:/texlive/2017/texmf-dist/fonts/type1/
-public/cm-super/sftt1200.pfb>
-Output written on thesis-ekf-template-hu.pdf (20 pages, 1168527 bytes).
+public/cm-super/sfti1200.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/cm-
+super/sftt1200.pfb>
+Output written on thesis-ekf-template-hu.pdf (27 pages, 1212798 bytes).
 PDF statistics:
- 423 PDF objects out of 1000 (max. 8388607)
- 354 compressed objects within 4 object streams
- 69 named destinations out of 1000 (max. 500000)
+ 466 PDF objects out of 1000 (max. 8388607)
+ 389 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

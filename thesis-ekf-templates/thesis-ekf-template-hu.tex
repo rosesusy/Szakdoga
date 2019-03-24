@@ -194,19 +194,113 @@ A felület főbb részei:
 A Unity ezen kívül még animálni is tudja az objektumait, legyen az egy modell vagy egy gomb, illetve panel. Be lehet állítani, hogy OpenGl-t vagy pedig a DirectX melyik változatával készítsük el a játékot. Rendkívül rugalmas, és könnyen kezelhető. Ha van a gépünkön Visual Studió, akkor a C\#-ban írt szkripteket automatikusan ezzel nyitja meg. Emellett a debugolást is könnyűvé teszi a Visual Studióba beépített Debug segítségével. Hiba keresés esetén elég, ha a Studióban megnyomjuk az Attach to unity gombot, amivel elindul a szkript futása, ezután ha elindítjuk a játékot a Unity felületén lévő Play gombbal, monitorozni tudjuk a szkript viselkedését játékon belül, töréspontok segítségével. Ezen kívül a motor támogatja még a TDD-t, azaz a Teszt vezérelt fejlesztést is.
 \chapter{Chemist}
 \section{Általános leírás}
-min 2 oldal
+A szakdolgozat fő témája a Chemist nevű oktató játék. A Unity motorral készült játék során molekulákat, ionokat és fémes ötvözeteket dinamikusan lehet előállítani a megfelelő atomok kiválasztásával. Jelenleg a néhány forrás felhasználásával csak az általános iskolákban tanított elemekkel kialakított kötésekre van felkészítve. A játékban szereplő kötések, mind elsőrendűek. Másodrendű kötések még nem szerepelnek benne.
+
+A játék három fő részből áll. A menüből, egy periódusos táblából és magából a játék felületből. 
+
+A program elindítása után a felhasználó a menüt pillanthatja meg. Itt a Segítség menüpont alatt megtalálhatja a játék rövid leírását és a tájékoztatót. Ezután a Start gomb megnyomásával egy új képernyőre navigál át a szoftver, ahol a teljes periódusos rendszer látszik. Itt a Mengyelejev tábla elemeit tartalmazó dobozra kattintva, a rendszer mellet megjelenik a kiválasztott elem Bhor atom modellje. Az atommagot reprezentáló gömb közepén az elemhez tartozó elektronok száma látszódik, míg az különböző színű és sebességű kisebb gömbök a mag körül keringő elektronokat szemléltetnék. Ha a felhasználó kiválasztotta megfelelő atomját, a képernyő alján lévő '' Ezt az atomot választom,, feliratú gombra kattintva átnavigál a molekula szerkesztő játék felületre.
+
+A játék szempontjából fontos, hogy az átnavigálás előtt mindenképp legyen kiválasztva egy elem. Ennek az az oka, hogy a szerkesztő felület bal oldalán egy gomb lista található az összes elemet felsorakoztatva. Egy-egy elemet a vegyjelével azonosít a játék, ezen kívül még a gombon helyet kap egy számláló. A gomb háttere és a számláló értéke az előzőekben kiválasztott atomtól függ. A háttér mutatja meg, hogy a kiválasztott atommal a listában szereplő atomok milyen kötést tudnak létesíteni. Ha a háttérszín piros, akkor ionost, ha fehér, akkor fémes, ha kék akkor kovalens kötést lehet kialakítani, míg szürke szín esetén a kiválasztott atommal nem tud kötést létesíteni.
+
+A számláló értéke azt jelöli, hogy az atomhoz a megfelelő kötésben hány ilyen elemet lehet kapcsolni.
+
+A szerkesztő felület úgy lett felkészítve, hogy a felhasználó használni tudja a játékot futtató eszközhöz csatlakoztatott egeret. Ha a felületen szereplő atomra rákattintunk, akkor a baloldalon található lista frissül, és ehhez az atomhoz nézi a kötéseket, mennyiségeket. Új elemet a lista egy gombjára kattintva tudunk a felületre felhelyezni.
+
+Kötéseket úgy lehet létrehozni, hogy két elemet összeütköztetünk. Ütközés során össze kell húznunk a játék felületen két elemet, ehhez mozgatni kell az egyik atomot. Ezt úgy tehetjük meg, hogy az egér bal gombjával hosszan rákattintunk, és közben a megfelelő helyre húzzuk az atomot.
+
+Az egér középső gombjának lenyomásával tudjuk forgatni az adott elemünket illetve molekulánkat, míg ha az egér jobb gombjával rákattintva egy elemre az kitörlődik a játék felületről, és a baloldali lista elemei alapállapotba kerülnek. Az alapállapot azt jelenti, hogy az elemhez rendelt kötés közömbös, a mennyiség pedig 0. 
 \section{Modulok}
+A következő alszekciókban a szoftver legfontosabb, illetve bonyolultabb, vagy pedig nagyobb kihívást igénylő modulok vannak kiemelve. Általában a Unityben alapértelmezettként előretelepített eszközöket használtam. Ez alól két kivétel van, az egyik a szövegek megjelenítéséhez használt szöveg modul, illetve a shader. Az alapértelmezett szöveg nem adott ilyen nagy/kis objektumokra éles betűket, ezért az Asset Storban megtalálható TextMeshPro-t használtam. Ez a modul abban különbözik az alapértelmezettől, hogy az alapértelmezett úgy működik, mint a szöveg szerkesztőben, tehát a különböző betűk, mint képek esetén pixelekként vannak eltárolva, ezért nagyításnál, illetve kicsinyítésnél a pixelek megnőnek, és homályossá válnak. De a TextMeshPro-nál a pixelekből álló betűalakok helyett, kiszámoljuk a távolságokat a pixelek és a betű alakjához tartozó élek között, mivel ezek a távolságok konstansok, ezek a távolságok mindig pontosan reprezentálják a betű alakját távolságtól, és felbontástól függetlenül.\cite{textmesh_pro}
 \subsection{Menü}
-min 2 oldal
+A játék elindítása után rögtön a menüvel találjuk szembe magunkat. Hivatalos weboldalon található oktató videó és asset segítségével készítettem el a menüt. \cite{unity_ui}
+A menün három gomb található, a Start gomb, a Segítség, illetve a Kilépés gomb.
+A navigálás során látható, hogy animációk kerültek a gombokra, és a panelekre. Ezeket könnyen el lehet készíteni a motorban található animator eszközökkel. Gomboknál az átmenetet animációra kell álltani, majd az auto generate animation gombra kattintva létre kell hozni egy animator conrollert (animáció vezérlőt). Ez fogja megmondani, hogy különböző animációkat milyen sorrendbe játszunk le, illetve mely események indítanak el egy adott állapotot, a benne lévő animációval. Gomb esetén négy állapotról beszélhetünk. Az első és a vezérlőben alapértelmezettként beállított a normál állapot, ez fog az animáció indításakor elindulni automatikusan. A kijelölt, megnyomott illetve inaktivált állapotba bármelyik állapotból át lehet jutni az automatikusan generált vezérlő szerint. Viszont az állapotok még ilyenkor nem tartalmaznak animációt.\cite{unity_link_polish_main}
+
+Animáció hozzáadásához előbb azt létre kell hozni. Ehhez ki kel jelölni azt az objektumot amit animálni szeretnénk, majd a főmenüsávból az animáció menüpontot kiválasztva megjelenik a hozzá tartozó szerkesztő felület. Az animáció létrehozásához kulcs vázakat (key frame) kell kijelölni, ezek határozzák meg az objektum kezdő állapotát illetve az animáció lezajlása után a végállapotát. A key framek létrehozásához azt is ki kell választani, hogy az objektum melyik tulajdonságát(property) változtatjuk meg az animáció során. \cite{unity_link_polish_main}
+
+A panelek át csuszásáért felelős animáció is ugyanígy vezérlővel és animáció együttesével lett létrehozva, azzal a különbséggel, hogy itt néhány panel átmenetének elindításához különböző paraméterekkel adjuk meg a lejátszást kiváltó parancsot. Ilyen paramétereket könnyedén hozzá lehet adni, az animáció vezérlőben megjelenő állapotok között feszülő irányított szakaszokhoz (ezek reprezentálják az átmenetet).A paraméterek típusa lehet logikai,egész szám, valós szám, és trigger. A szakdolgozat menüje az utóbbi típusút használja.\cite{unity_link_polish_main}
+
+Ezen kívül a menüben hallható hangok ingyenes royalty free weboldalról származnak\cite{hangforrás_link}, melyeket szintén a motorba alapértelmezettem beépülő modul segítségével (audio klipp) segítségével lehet bármilyen objektumra ráilleszteni. Ha valamilyen interakcióhoz akarjuk kötni a hang lejátszását, akkor egy event trigger komponenst kell, hogy kerüljön arra az objektumra, amivel a felhasználó interakcióba lép.\cite{unity_link_polish_main}
 \subsection{Periódusos rendszer}
-min 2 oldal
+Erre a \textit{Scene}re lehet közvetlenül átnavigálni a menüből. Itt egy Mengyelejev tábla fogadja a felhasználót, ahol az elemek vegyjele, rendszáma és tömege látható. Kicsit bal felé orientálódik helyet hagyva a Bhor atommodellnek jobb oldalt.
+
+A periódusos rendszerbeli elemeket kis dobozokba rendeztem, ezekre a dobozokra kattintva jelenik meg az adott atom modellje. Az elektronok csóvát hagyva maguk után különböző pályákon keringenek, színük a megfelelő pályához tartozásukat jelzi.
+
+Ahhoz, hogy a táblázatot létre tudja hozni a játék, kell egy adatbázis, ami az elemeket és a hozzájuk tartozó tulajdonságaikat tartalmazza (vegyjel, név, elektronok száma, héjak száma, elektronegativitás, stb). Erre a json formát találtam a legmegfelelőbbnek kicsi mérete, és könnyű szerkeszthetősége miatt. 
+
+A json konvertálásához, illetve a periódusos rendszer megjelentéséhez a Microsoft által kiadott nyílt forráskódú, Unity motoron alapuló, VR technológiát szemléltető test szoftver. Itt is egy periódusos rendszert jelenítettek meg, ahol dobozokkal reprezentálták az elemeket, illetve szintén json-t használtak adatforrásként. \cite{windos_peritabla}
+
+Az adat átkonvertálásához szükséges egy publikus osztály, amelyben legalább annyi publikus mező van a megfelelő típussal, mint a json-ben szereplő adatobjektumok tulajdonságai. A json-ben szereplő adattulajdonságok neveinek egyezniük kell a publikus osztály mezőinek neveivel. A motor ugyanis csak gy tudja az adatok alapján létrehozni az ott szereplő objektumokat.
+
+\textbf{UML ábra }
+
+Mivel a táblázat dinamikusan jön létre, ezért érdemes egy minta játékobjektumot létrehozni, ami alapján le a motor legenerálja az összes elem dobozt. Játek objektumnak \textit{GameObject} azokat a tárgyakat nevezzük, amiket a képernyőn látunk. A minta játék objektumokat a Unity \textit{prefab}nak nevezi.
+
+A prefab nem más, mint olyan \textit{GameObject}, amit a hozzá tartozó összes komponensével, szkriptjével és tulajdonságaival eltudjuk tárolni a rendszerben.\cite{unity_prefab} Így ezeket újra tudjuk hasznosítani a játék egy másik részénél, vagy egyszerre többet is tudunk generálni belőle az adott \textit{scene}-en.
+
+A táblázatot alkotó dobozok, illetve a Bhor modell \textit{GameObject}-jét\textit{ prefab}ként került tárolásra a játékon belül.
+
+Mikor egy \textit{GameObject} kinézetét illetve viselkedését szeretnénk szkripten belül módosítani, a szkriptben egy publikus \textit{GameObject} mezőt deklarálunk.
+
+Ezen mezőt nem a szkripten belül lesz példányosítva, hanem a motor \textit{ Inspector }felületén szereplő komponens listán keresztül. Egyszerűen az ott található szkript komponens publikus \textit{GameObject} mezőjébe behúzzuk a megfelelő \textit{GameObject}-et vagy \textit{prefab}-et.
+
+Viszont így könnyen kitudjuk véletlenül húzni az objektumokat a szkriptekből, ezzel jelentősen megnehezítve a fejlesztést és a tesztelést.
+
+Ezért a szoftver egy \textit{PlayerSettings} nevű \textit{srciptable} osztályt használ. Ebben tároljuk a \textit{prefab}okat. Így ha egy szkriptnek használnia kell egy \textit{prefab}ot, a publikus \textit{GameObject} típusú mező helyett, egy publikus \textit{PlayerSettings} mező deklarálódik. Majd ugyanúgy az \textit{ Inspector } felületen hozzárendeljük a \textit{srciptable} objektumot, amin keresztül a szkript már el tudja érni a szükséges \textit{prefab}ot.
+
+De mit is jelent az, hogy valami \textit{srciptable object}?
+
+Ezek főként adat tárolók, nagy mennyiség adatot képesek tárolni osztályoktól függetlenül. Főleg arra használják általában, hogy csökkentség a project memóriahasználatát, azáltal, hogy ezek nem hoznak létre újabb másolatokat a már meglévő prefabokról, és azok komponenseiről. Ezek a másolatok okkor jönnek létre, amikor a játék objektumokat újra példányosítjuk minden adatukkal együtt. (Behúzzuk a szkriptbe őket közvetlenül) \cite{unity_scriptable}
+
+Így ha létrehozunk egy ilyen objektumot, ezen keresztül közvetlen hozzá tudunk férni a tárolt adatokhoz. Legyen az explicit típus, modell vagy prefab.\cite{unity_scriptable}
+
+Viszont vigyázat! Amikor a magát a fejlesztő környezetet(Editor) használjuk, lehetőség van futási időben módosítani és menteni az adatokat a \textit{ScriptableObjects}-be, mert ez egyidejűleg használja az Editor névterét és szkriptjét.
+
+Ámbár egy kiimportált, lebuildelt szoftver esetén, a \textit{ScriptableObjects}-ba nem menthetsz adatot, de a már elmentett adatot onnan kinyerheted a ScriptableObjects Assets-ből, amit korábban a fejlesztés során már felállítottál. (Az Asset reprezentációja minden olyan dolognak, amit felhasználható a játék, illetve projekt során. Az asset jöhet külső forrásból, mint pl 3D fájl, hang fájl, stb, amit a Unity támogat. Vagy jöhet belső forrásból, azaz a Unityben szerkesztett Animáció kontroller vagy Render textúraként)\cite{unity_asset}
+Az Asset-ként menteni kívánt adat, az Editor Tools-ból a ScriptableObjects-be, a lemezen van tárolva, ezért a Session-ök között végig jelen van.
+\cite{unity_scriptable}
 \subsection{Shader}
 min 2 oldal
 \subsection{Fémes és inos kötés modellje, és működése}
-min 2 oldal
+Az oktató játék fő felülete a szerkesztő felület, ahol a különböző molekulákat, ionokat és fémes kötéseket lehet létrehozni atomok összehúzásával.
+
+Mint ahogy fentebbi fejezetben olvasható ionos kötésnél a kötésben résztvevő atomok megpróbálnak nemesgáz konfigurációba kerülni, és ehhez a vegyérték elektronjaik közül vagy leadnak, vagy még többet vesznek fel.
+
+A játékban készült ion kötésre használt modell ezt a megközelítést próbálja szemléltetni. Alapértelmezetten ezen a \textit{scene}en az atomot egy olyan modell jeleníti meg, amihez egy szkript komponens tartozik. Ebben a szkriptben található a külső valencia elektron tartalmazó lista, amiket elektron\textit{ prefab}okon keresztül modelleződnek. Ezek az elektronok az atom gyerekelemeiként látszódnak a \textit{Hierarchy} nézeten, illetve egymáshoz képest egyenlő távolsággal köröznek az elem körül. Ezen kívül ez a szkript tárolja, hogy részt vesz e az atom bármilyen kötésben, illetve, ha igen milyenben. Valamint ez a szkript felel az atomok összeütközésének kezeléséért.
+
+Ha két atomot ütköztetünk, a program megnézi, hogy az atomok milyen kötéssel rendelkeznek. Ez a baloldalon lévő gomb listából, és az adott gomb színéből derül ki. Az, hogy egy gomb milyen színűvé válik attól függ, hogy rákattintottunk e a szerkesztő felületen lévő atomra. Ha igen, akkor a kattintás eseménye meghívja azt a szkriptet, amiben a \textit{Refresh} metódus szerepel, és a felületen lévő atom elektron elektronegativitásából meghatározza, hogy a többi elem milyen kötéssel köthető hozzá.
+
+Ha a két atom kötése megegyezik, vagy ha csak az egyik atom kötése nem definiált, akkor létrehozzuk a kötésnek megfelelő modellt. (A nem definiált azért kell, mert ha törlünk egy elemet, akkor a listában az összes atom kötése nem definiáltra változik)
+
+Ionos kötésnél az történik, hogy a nagyobb elektronegativitással rendelkező atom elveszi a másik kisebb elektronegativitással rendelkező atom külső elektronjait, addig amíg a vegyértékhéjon nyolc elektronja nem lesz. Értelemszerűen, ha a másik nem rendelkezik megfelelő számú vegyértékelektronnal a központi atomhoz még kapcsolható másik atom ionos kötéssel. Majd a kötő elektronok egyszerűen összeragadnak, tehát ha mozgatjuk az egyiket, a másik is konstans távolsággal mozog utána.
+
+Ez a játék futása közben úgy történik, hogy a két atom ütközésénél ha a vizsgálat igaz értékkel tér vissza, létrejön egy ion modell, az ion \textit{prefab} alapján. Ennek az ion objektumnak lesz mind két atom a gyerek eleme. Az atomok többé nem mozgathatóak külön-külön. Tehát amilyen pozícióban ütköztek egymáshoz képest, úgy is maradnak tovább.  Ezután megvizsgáljuk, hogy melyiknek nagyobb az elektronegativitása. Amelyiknek több, az lesz a központi atom. Ő fog elektronokat elvenni a másiktól. Tehát ezen atom szkript komponensében szereplő elektronok szülőobjektumát át kell állítani úgy, hogy az új szülő a központi elem legyen. De csak addig, amíg a fő atom elektronlistájának számossága el nem éri a nyolcat.
+
+Ezután a központi elem összes elektronját az elemhez képest középre állítjuk, majd újra, immár az újonnan kapott elektronokkal együtt felosztjuk az x-y síkot n részre, ha n az elektronlista számossága, majd újra elkezdenek keringeni az atom körül.
+
+A későbbi hibás, illetve egy kóbor atom ellopja a már kötésben lévő atomot vagy elektront hibák kiküszöbölésére a feltételvizsgálatba bele kellett tenni azt a vizsgálatot is, hogy az érintkező atomok kötésben vannak-e. Illetve az ütköző atom mellék atom-e. A mellékatom vizsgálat azért fontos, mert ha a központi atom külső héján még nincs nyolc elektron, akkor egy másik megfelelő atomot hozzá lehessen kapcsolni, anélkül, hogy a már meglévő kötés modell sérülne.
+
+Viszont ezen megszorítások miatt, ha egy mellékatomnak még marad elektronja a vegyérték héjon, illetve ő maga elméletileg még képes kötést hozni, nem lehet hozzá egy másik elemet kötésben hozzárendelni. A játék még nincs arra felkészítve, hogy egy mellékatom, akár egy másik kötés központi atomjaként szerepeljen, kizárva ezzel a komplexebb, akár többfajta kötésből álló szerkezetek kiépítését.
+
+Fémes kötés esetén az alapértelmezett atommodellt a külső vegyértékelektronok reprezentálásával nem használja a szoftver. Helyette, miután a feltételek igaznak bizonyultak és fémes kötés alakulhat ki, az atommodell szkriptjében szereplő elektronlistát deaktiváljuk. Majd létrehozzuk a fémes kötés modelljét, aminek gyerekelemei szintén az érintkező atomok illetve egy részecske rendszer, ami a közös elektronfelhőt reprezentálja.
+
+Mivel nem találtam elég forrást a fémes kötésekről, illetve, amiket értelmezni tudtam, túl bonyolult volt az időkerethez képest, ezért az ütköző atomok felső korlátja nincs expliciten meghatározva, illetve a kristályszerkezetek sincsenek lemodellezve. Viszont megfelelő modell beillesztése után a játék fel van arra készítve, hogy a kristályrács pozíciójába be lehessen illeszteni az elemeket.
+
+Ütközés után az atomokat itt sem lehetséges külön mozgatni, viszont a pozíciója megváltozik mind kettőnek. Szorosan egymás mellé ugranak. Ha újabb atomot kötünk hozzá, az is szorosan melléjük és alájuk ugrik. A kötő atomok négyzetrácsos elrendezésbe kerülnek. Az oszlopok száma négy, kilenc, stb. kötő elemszám után változik.
+
+A részecske ''felhő,, mindegy egyes újabb elemnél csak növekszik, beterítve a teljes kötésekből álló síkot.
 \subsection{Kovalens kötés}
 min 2 oldal
 \chapter{Továbbfejlesztési lehetőségek}
+Továbbfejlesztési lehetőségként felmerül az, hogy fel lehetne készíteni a programot arra, hogy komplexebb kötéseket is tudjon kezelni. Ehhez olyan modelleket kellene összerakni, amikben jelezni lehetne melyik atom, milyen szerepet tölt be a másik atomhoz képest. Ezen kívül lehetne bővíteni a kötések típusát másodrend kötésekkel is.(ide felsorolni)
+
+Mivel a játék Unityben készült és háromdimenziós modelleket használ, egy kis játékmechanikai kiegészítéssel (képlet alapján időre összerakni egy bonyolultabb kötést, vagy ha a felhasználóhoz saját adatbázist rendelünk, akkor hány új vegyületet rakott már eddig össze), akár VR platformra is ki lehetne bocsájtani.
+
+Egy külső adatbázis csatlakoztatásával az ismertebb molekulákról egy egyszerű leírást lehetne tárolni, kulcsként pedig a molekula, ion, fémes kötésbeli atomok jeleit lehetne használni. Az így kapott szoftvert ki lehetne importálni akár okos telefonra és weboldalra is, a Unity motor támogatja mindkét platformot.
+
+Emellett az oktatásbeli használhatóságát a programnak akár azzal is lehet növelni, hogy egy szerver- kliens, illetve egy tanár-diák kapcsolatot is ki lehetne alakítani. Ehhez természetesen új felületeket kellene fölvenni a programban, valamint jogosultsági rendszert, illetve bejelentkezés és felhasználó menedzselést kellene alkalmazni. A tanár-diák kapcsolat kialakítása azért kellene, mert akár arra is lehetne használni a szoftvert, hogy a tanár kiad a játékon belül diákjainak egy-egy házi feladatot (pl.: három próbálkozásból össze kell rakni a víz molekuláját), majd a diák pl.: okos telefonján összehúzza a megfelelő molekulákat és elküldi az általa vélt jó megoldást, vagy csak azt küldi el a rendszer, hogy hanyadik próbálkozásra sikerült az adott diáknak megoldani a feladatot. 
+
+Az oktatástól kicsit eltávolodva, és a szoftver dinamikus szerkesztőjére koncentrálva, akár ipari vagy kutatási területre is alkalmaztató lehetne. Ennek viszont legfőbb akadálya az, hogy szükség lenne a továbbfejlesztéshez legalább egy olyan személyre, aki otthonosan mozog a szerves és szervetlen kémia területén. Ugyanis a szakdolgozat írása közben csak az általam felkutatott és saját magamtól megértett kémiai törvényeket tudtam felhasználni.
 \chapter{Ábrák jegyzéke}
 \begin{thebibliography}{1}
 	\bibitem{sulinet_elektronpályák} \textsc{Suli Net}: \url{https://tudasbazis.sulinet.hu/hu/termeszettudomanyok/kemia/altalanos-kemia/az-atomok-elektronszerkezete/az-atomok-elektronszerkezete} (Hozzáférés dátuma: 2019.03.15)
@@ -229,5 +323,13 @@ min 2 oldal
 	\bibitem{unreal_news} \textsc{Unreal} \url{https://www.unrealengine.com/en-US/blog/dozens-of-games-to-be-featured-in-the-unreal-engine-booth-at-gdc-2019} (Hozzáférés ideje: 2019.03.18).
 	\bibitem{unreal_game_list} \textsc{Wikipédia} \url{https://en.wikipedia.org/wiki/List_of_Unreal_Engine_games} (Hozzáférés ideje: 2019.03.18).
 	\bibitem{unity_web} \textsc{Unity} \url{https://unity3d.com/unity?_ga=2.102681794.2102771212.1552910539-416168645.1549027919} (Hozzáférés ideje: 2019.03.18).
+	\bibitem{textmesh_pro}\textsc{Youtube} \url{https://www.youtube.com/watch?v=xfo0NrLJe_k&feature=youtu.be} (Hozzáférés ideje: 2019.03.18)
+	\bibitem{unity_ui}\textsc{Unity} \url{https://unity3d.com/learn/tutorials/topics/user-interface-ui/creating-main-menu} (Hozzáférés ideje: 2019.03.18)
+	\bibitem{unity_link_polish_main}\textsc{Unity} \url{https://unity3d.com/learn/tutorials/topics/user-interface-ui/polishing-your-game-menu?playlist=17111} (Hozzáférés ideje: 2019.03.18)
+	\bibitem{hangforrás_link} \url{https://opengameart.org/content/ui-sound-effects-pack} (Hozzáférés ideje: 2019.03.18)
+	\bibitem{windos_peritabla} \textsc{Microsoft} \url{https://docs.microsoft.com/en-us/windows/mixed-reality/periodic-table-of-the-elements} (Hozzáférés ideje: 2019.03.18)
+	\bibitem{unity_prefab} \textsc{Unity} \url{https://docs.unity3d.com/Manual/Prefabs.html}(Hozzáférés ideje: 2019.03.18)
+	\bibitem{unity_scriptable} \textsc{Unity} \url{https://docs.unity3d.com/Manual/class-ScriptableObject.html?_ga=2.242527874.1682588866.1553453327-416168645.1549027919} (Hozzáférés ideje: 2019.03.18)
+	\bibitem{{unity_asset} \textsc{Unity} \url{https://docs.unity3d.com/Manual/AssetWorkflow.html}  (Hozzáférés ideje: 2019.03.24)
 \end{thebibliography}
 \end{document}
