@@ -51,7 +51,7 @@ A játék működéséhez elengedhetetlen az atom felépítésének és a köté
 
 Mint tudjuk az atomok protonokból, neutronokból és elektronokból állnak. A protonok töltése pozitív, az elektronoké negatív, a neutronok töltését pedig tekintsük szemlegesnek. Az elektronokon kívül a nukleonok az atom magjában található, míg az elektronok az atom mag körül ''keringenek,, előre meghatározott elektronpályákon.
 
-Ezek az elektronpályák kisebb pályákból/ héjakból állnak. Minden ilyen nagyobb pályán megtalálhatók ezek az alhéjak ha az atom rendelkezik megfelelő számű elektronnal. Ezeken az alhéjakon meghatározott számú elektron foglalhat helyet.Az s pályán 2 elektron, a p pályán 6 elektron, a d pályán 10 elektron, illetve az f pályán 12 elektron fér el.\cite{sulinet_elektronpályák}
+Ezek az elektronpályák kisebb pályákból/ héjakból állnak. Minden ilyen nagyobb pályán megtalálhatók ezek az al héjak ha az atom rendelkezik megfelelő számú elektronnal. Ezeken az al héjakon meghatározott számú elektron foglalhat helyet.Az s pályán 2 elektron, a p pályán 6 elektron, a d pályán 10 elektron, illetve az f pályán 12 elektron fér el.\cite{sulinet_elektronpályák}
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=9cm]{elektronszerkezet}
@@ -103,7 +103,7 @@ Fémes kötés során több kevés vegyérték elektronnal rendelkező, illetve 
 
 Azaz nincsenek különálló molekulák, sem szabad atomok, hanem a leglazábban kötött elektronok a fématomokról leszakadva valamennyi visszamaradt fémionhoz közösen tartoznak.\cite{eke_kemia_ppt}. Szilárd halmazállapotban ezek a lazán kötött atommagok és a közös elektronfelhőjük fémrácsokat alkotnak. A rácsszerkezeten belül az elektronok könnyen tudnak vándorolni, ezért is jól vezetik a fémek az elektromosságot, illetve a hőt.\cite{wiki_femes} Valamint a rács szerkezet síkjai is könnyen eltudnak gördülni egymáson, emiatt lehet a fémeket aránylag egyszerűen megmunkálni.
 
-\section{Kovalens kötés}
+\section{Kovalens kötés}\label{kovalens}
 Kovalens kötés során a két atom egy vagy több elektronpárral kötődnek egymáshoz.\cite{eke_kemia_ppt} Ez a legerősebb kötési forma, főleg ha a kötés folyamén stabil molekula alakul ki, ugyanis ekkor az elektronpárok egy úgynevezett közös molekulapályára kerülnek\cite{miskolc_kemia}, amik az atompályák átfedéséből keletkeznek.\cite{eke_kemia_ppt}
 
 Azok az elektronok, amik leszakadnak a vegyértékhéjról, majd azután a kötésben részt vesznek és párokat alkotnak kötő elektronpároknak hívják, a kötésben részt nem vevő elektronokat pedig nem kötő elektronoknak illetve elektronpároknak hívják.\cite{eke_kemia_ppt}
@@ -290,9 +290,50 @@ Mivel nem találtam elég forrást a fémes kötésekről, illetve, amiket érte
 
 A részecske ''felhő,, mindegy egyes újabb elemnél csak növekszik, beterítve a teljes kötésekből álló síkot.
 \subsection{Kovalens kötés}
-min 2 oldal
+Kovalens kötés során maga a két ütköző atom elektronpárja közös molekulapályára kerül. A játék kovalens modellje először ezt a megközelítést implementálta volna, viszont az iskolákban a kovalens kötéseket molekularács segítségével mutatják be, ezért az oktató játék modellje is ennek megfelelően változott.
+A rácsmodellek általában gömbökből és pálcikákból épülnek fel. A pálcikák a kötést létsítő elektronpárokat szimbolizálják, míg a gömbök a kötő atomokat. Mivel két atom között akár több elektron pár is kialakíthat kapcsolatot, így azokat több pálcika fogja értelemszerűen reprezentálni. A modell fixálása után, az volt a következő feladat, hogy felkészítsük a szoftvert arra, hogy az atomok összeütköztetésénél mindig a megfelelő modellt használja fel a program.
+
+Ehhez előbb magának a kovalens kötés rácsszerkezetének mikéntjét kellett megérteni, valamint azt, hogy a szerkezetek és a kötést reprezentáló pálcikák irányultságát mi befolyásolja. \Aref{kovalens}.~alfejezetben tárgyalt elmélet alapján nem minden külső vegyérték elektron tud kötést létesíteni. Viszont ezek az elektronok befolyásolják a kötés szögét, ezért érdemes figyelembe venni őket a modell kialakításakor. 
+
+A modell felépítése molekularács szerkezetű, azaz a kötőpárokat egy-egy cilinderrel, a kötő atomokat pedig egy-egy gömbbel reprezentálja a szoftver. Mivel itt sem támogatja a rendszer a komplex összetettebb rendszereket, ezért itt is beszélhetünk központi illetve mellék atomokról. Sőt mi több itt muszáj is, hiszen ha a szakirodalomban molekularácsról beszélnek, a mellékatomokra ligandumokként hivatkoznak. Ezen rácsszerkezetek geometriája függ a kötő elektronpárok, a nem kötő elektronpárok illetve a ligandumaik számaitól. 
+
+Általános képlete egy ilyen szerkezetnek a \begin{math}AX_{n}E_{m}\end{math}, ahol \begin{math}A\end{math} a központi atom, \begin{math}X_{n}\end{math} a ligandumok és azok számossága, \begin{math}E_{m}\end{math} pedig a nem kötő elektronpárok száma. Sajnos a talált forrásban nincs az összes lehetséges kombinációra modell bemutatva, ezért a játék is az alapvetőbb molekularácsokat tartalmazza, valamint nem veszi figyelembe az egyedül álló nem kötő elektronokat sem.\cite{kovalens_modell}
+
+Ilyen a lineáris szerkezet, ahol a kötő atomok egymással 180 fokos szöget zárnak be, azaz itt a kötésben részvevő atomok egy egyenesen vannak. Például ilyen szerkezettel rendelkezik a széndioxid.
+
+Másik gyakori szerkezet, amit felvesznek a molekulák a síkháromszög. Ekkor a kötő atomok egy síkban helyezkednek el. Közöttük a kötésszög 120 fok. Ilyen például a kén-trioxid.
+
+Ezen kívül még gyakran találkozhatunk tetraéderes szerkezettel is, ahol a kötő atomok egymással 109,5 fokot zárnak be. Négy ligandummal illetve minden elektronja kötésben van az ilyen szerkezetet felvevő molekulának. Ilyen például a metán.
+
+De sokszor alkotnak V-alakú (víz,kén-dioxid), piramisos (ammónia), trigonális (Foszfor-pentaklorid),tetragonális (Kén-hexafluorid ), pentagonális illetve hexagonális bipiramisos szerkezeteket is.
+
+Ezen modellek megalkotásához a Belnder nevű modellező programot használtam. Egyrészt mert a Unity könnyen tudja a kiterjesztéseit importálni, másrészt mivel a modellező szoftverben sokkal egyszerűbben tudtam megadni és szerkeszteni a kötésszögeket.
+
+A Blender egy ingyenesen elérhető  szabad, nyílt forráskódú, háromdimenziós grafikai program. Számos operációs rendszerre elérhető. Poligonális testek, gyors felosztás alapú modellezés, Bézier görbék, NURBS-felületek, digitális faragás és betűképek támogatása elérhető benne, ugyanúgy, mint a sokoldalú beépített renderelő és külső renderelők támogatása. De ezen kívül Keyframe-alapú animációs eszközökkel, például inverz kinematikával, csontváz, görbe és rács alapú deformációval, szilárdtestek, részecske alapú haj és részecskerendszer ütközésvizsgálattal is rendelkezik. \cite{blender}
+
+A Unity motorban elérhető modellszerkesztőhöz hasonlóan objektumaihoz alapértelmezetten tud rendelni úgynevezett Materialokat (Anyagokat), amik importálás során automatikusan bekerülnek a projektbe a modell hierarchikus szerkezetével együtt. Azaz ha a Blenderben egy objektumhoz más gyerekobjektumot kapcsoltunk, akkor ez az elrendezés a Unityban is meg fog maradni. 
+
+Tehát ha a játékban két atom ütközik és mindkettő megfelel azon feltételeknek, hogy legalább egyiknek a kötés típusa kovalens, illetve legalább az egyik nincs kötésben , valamint egyik ütköző atom sem mellékatom, akkor létrejöhet a kötés közöttük.
+
+Az lesz a központi atom, aminek nagyobb a valencia elektronszáma. Azután megnézi a szoftver, hogy a központi atomhoz tudunk e még kapcsolni más atomot, vagy pedig az összes valencia elektronja már kötésben van. Ha ez az eset még nem áll fent, meg kell nézni, hogy képes-e a két atom többszörös kötést kialakítani. Ez akkor lehetséges, ha a központi atom legkülső héja, plusz a mellékatom valenciaelektronjainak az összege kevesebb mint nyolc. (Mivel a közös molekulapályán keringő elektronok mindkét atomhoz hozzátartoznak), ha kevesebb akár kettő vagy három kötő elektronpár is kialakulhat, ha nem akkor pedig csak egy pár jön létre.
+Ha még eddig nem állt valamilyen más atommal kovalens kötésben az ütköző atomok bármelyike, a játék létrehoz egy új molekularács modellt. Ezt úgy teszi meg, hogy a Blenderből exportált modelleket egy szótárszerkezetbe rendeli a játék indításánál, majd kulcsként a ligandumok és nemkötő elektronpárok számpárosát állítja be. A megfelelő modellt egy metódus keresi ki a készletből, aminek a szoftver átadja a központi atomhoz kapcsolódó atomok darabszámát, az atom valenciáját illetve a vegyértékhéjon lévő elektronok számát.\textbf{ (kódpélda a metódusról)}
+
+Ezután a központi elemet helyezi be. A modell úgy van előkészítve, hogy mind a központi elemnek, mind a mellékelemeknek illetve az összes kötő elektronpárnak a helyét előre meg lett határozva egy-egy \textit{GameObject}-el, amiket funkcióiknak megfelelően felcímkéztem, majd egy egyszerű függvénnyel a címkék alapján meg lehet őket keresni, és ha kell listába rendezni. Ezért nincs más dolgunk, mint a legenerált modellben a megfelelő \textit{GameObject} gyerekelemének kell beállítanunk a központi atomot.
+
+A berendezésekért felelő szkript a modellhez van csatolva, így a modell elemeit egyszerűbben eltudja érni. 
+
+A mellékatomnál, mivel több lehetséges hely van ahová kerülhet, érdemes ezeket a címkéinek megfelelően megkeresni, és az objektumhoz rendelni a listát. Majd a lista legelső gyerekelem nélküli ''helyére,, beilleszteni a mellékatomot, úgy hogy az elem szülőobjektuma a kiválasztott hely lesz.
+
+A kötésekhez tartozó elektronok szülőobjektumait is ehhez hasonlóan állítja át a szoftver. Megkeresi a játék a kötést reprezentáló cilinder \textit{GameObject} listáját. Azután azt a kötési helyet, ahol a megfelelő számú gyerekelem van. Majd a központi és a mellék atomhoz tartozó gyerekelektron/gyerekelektronok szülőjének beállítja a kötést reprezentáló cilindert. Ezután pedig az elektronok pozícióját harmadolópontok segítségével meghatározza.
+
+Ezen lépések után beállítja azokat a logikai tulajdonságokat, amik meghatározzák hogy az elemek kötésben vannak-e, illetve mellékatomok-e.
+
+De ha már létezett egy előző molekula, amihez egy újabb atomot szeretnénk kötni, akkor ugyanúgy létre kell hozni az új modellt, majd a régiből átmásolni a megfelelő helyekre a gyerekobjektumokat, végül a régi objektumot el kell dobni.
+
+Az átmásoláshoz a már meglévő beillesztő metódusokat használjuk, csak az áthelyezés sorrendje történik visszafelé.
+
 \chapter{Továbbfejlesztési lehetőségek}
-Továbbfejlesztési lehetőségként felmerül az, hogy fel lehetne készíteni a programot arra, hogy komplexebb kötéseket is tudjon kezelni. Ehhez olyan modelleket kellene összerakni, amikben jelezni lehetne melyik atom, milyen szerepet tölt be a másik atomhoz képest. Ezen kívül lehetne bővíteni a kötések típusát másodrend kötésekkel is.(ide felsorolni)
+Továbbfejlesztési lehetőségként felmerül az, hogy fel lehetne készíteni a programot arra, hogy komplexebb kötéseket is tudjon kezelni. Ehhez olyan modelleket kellene összerakni, amikben jelezni lehetne melyik atom, milyen szerepet tölt be a másik atomhoz képest. Ezen kívül lehetne bővíteni a kötések típusát másodrend kötésekkel is.(Hidrogénkötés, Van der Waals kötés, Dipóluskötés, stb)
 
 Mivel a játék Unityben készült és háromdimenziós modelleket használ, egy kis játékmechanikai kiegészítéssel (képlet alapján időre összerakni egy bonyolultabb kötést, vagy ha a felhasználóhoz saját adatbázist rendelünk, akkor hány új vegyületet rakott már eddig össze), akár VR platformra is ki lehetne bocsájtani.
 
@@ -330,6 +371,8 @@ Az oktatástól kicsit eltávolodva, és a szoftver dinamikus szerkesztőjére k
 	\bibitem{windos_peritabla} \textsc{Microsoft} \url{https://docs.microsoft.com/en-us/windows/mixed-reality/periodic-table-of-the-elements} (Hozzáférés ideje: 2019.03.18)
 	\bibitem{unity_prefab} \textsc{Unity} \url{https://docs.unity3d.com/Manual/Prefabs.html}(Hozzáférés ideje: 2019.03.18)
 	\bibitem{unity_scriptable} \textsc{Unity} \url{https://docs.unity3d.com/Manual/class-ScriptableObject.html?_ga=2.242527874.1682588866.1553453327-416168645.1549027919} (Hozzáférés ideje: 2019.03.18)
-	\bibitem{{unity_asset} \textsc{Unity} \url{https://docs.unity3d.com/Manual/AssetWorkflow.html}  (Hozzáférés ideje: 2019.03.24)
+	\bibitem{unity_asset} \textsc{Unity} \url{https://docs.unity3d.com/Manual/AssetWorkflow.html}  (Hozzáférés ideje: 2019.03.24)
+	\bibitem{kovalens_modell} \url{http://www.sirbuday.hu/rakoczi/molekulaszerkezet.pdf } (Hozzáférés ideje: 2019.03.25)
+	\bibitem{blender} \textsc{Wikipédia} \url{https://hu.wikipedia.org/wiki/Blender_(program)} (Hozzáférés ideje: 2019.03.25)
 \end{thebibliography}
 \end{document}
