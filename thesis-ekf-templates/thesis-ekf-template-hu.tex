@@ -35,20 +35,48 @@ A játék célkorosztálya első sorban az általános iskolások korcsoportja. 
 A szoftver alapvetően drag and drop technológián alapul, ezért is, illetve, mert a játékfelületen törölni és mozgatni lehet a molekulákat és atomokat javasolt az egér használata.
 
 Választásom azért esett erre a témára, mivel jómagam is nehezen tudtam elképzelni ezeket kötéseket általános iskolásként, valamint érdekelt a háromdimenziós modellezés és játékfejlesztés is. Így a Unity-vel lehetőségem volt közelebbről megismerkedni a játékfejlesztéssel magával, illetve a modellezés lépéseivel, valamint a kémiai háttér tudásom is gyarapodott.
-
+%
 A szakdolgozat részletezni fogja a technológiát, illetve összehasonlítja más fejlesztőkörnyezetekkel. Ismertetni fogja, hogy milyen kémiai ismeret volt szükséges a szoftver elkészítéséhez, valamint bemutatásra kerül maga a játék is az azokban használt modellekkel, és felhasználói interakció lehetőségekkel együtt. 
 
 Mivel a témakör elég tág, illetve az oktató játék csak szűkös tudományos forrással készült, ezért a továbbfejlesztési lehetőségek akár több irányban is folytatódhatnak.
 
 \chapter{Kémia az iskolákban}
+A kémia oktatása, mint minden egyéb természettudományos tárgyé más kihívásokat rejt, mint a humán tárgyaké. 
 
-min 2 oldal
+A természet tudománnyal fogalakozó tárgyakat, így a kémiát is kétféleképpen lehet megközelíteni oktatás szempontjából. Induktív és deduktív módon. 
+
+Induktív módszernél egy konkrét természeti jelenségből indulunk ki,
+amelyet kísérlettel modellezünk, ezt értelmezzük, majd általánosítjuk. Míg a deduktívnál egy hipotézist igyekszünk bizonyítani például egy kísérlettel. De mindkettőben  fontos szerepet játszik a kísérletezés, illetve a vizualizáció. A vizualizációban pedig a modellek használata. \cite{kémia_modertan}
+
+Az a jó modell ami a láthatatlant, nehezen elképzelhetőt segít elképzelni. Elég egyszerűnek kell lennie, hogy megértsük, átlássuk, viszont realisztikusnak kell lennie ahhoz, hogy tükrözze a valóságot bizonyos aspektusból, így könnyebben összevethető azzal. \cite{kémia_modertan}
+
+Kémia oktatásában a szemléltethető eszközöket két nagy csoportra lehet osztani. Az egyik az Eugon vagy kalott modell, ami csonkolt gömbökből áll, jól szemléltetve a molekula térkitöltését, míg a másik a pálcika vagy vázmodell. Ezen kis gömbök vagy hengerek találhatók, amelyeken egy vagy több csap helyezkedik el. Ez utóbbiak a vegyértékhéjnak tekinthetők. A csapok száma és az egymással bezárt szögeik a kötésorientációkat jelzik. \cite{kémia_modertan}
+
+Az idomok színezése mindkét fajtánál a nemzetközi szabvány szerint történik. Fehér jelenti a hidrogénatomot, piros az oxigénatomot, míg a fekete a szénatom, a zöld a klóratom, a sárga a kénatom, a pedig kék a nitrogénatomot reprezentálja. A pálcikamodell-készletben esetében még találhatók bizonyos színű csövek is a kötések kialakításához. Célszerű következetesen a zöld csöveket a szigma, a fehéreket a pí kötések jelzésére használni. \cite{kémia_modertan}
+
+Ezek a szemléltető eszközök azon kívül,hogy tükrözik hány nemkötő elektron párja van a vegyületnek, a molekulát alkotó elemek egymáshoz viszonyított helyzetét, alakját, távolságát. Fő céljuk a vegyület térszerkezetének bemutatása, ami összetettebb molekulák esetén eléggé bonyolult térszerkezetet eredményez. Az ilyen modellek segítségével viszont könnyebben lehet fejleszteni a diákok térlátását, mind egy kétdimenziós rajz segítségével.\cite{kémia_modertan}
+
+Innen jött az ötlet, hogy a játék ezen modellek felhasználásával reprezentálja a kötéseket három dimenzióban. Ez a megkötés főleg a kovalens kötésnél volt fontos. 
+
+Már most is rengeteg molekula s vegyület modellező szoftver létezik a piacon. Általában molekula szerkesztőknek nevezik őket. Ezek olyan számítógépes programok, amik kémiai szerkezetek létrehozására, módosítására használatosak. Ezek képesek az ábrázolt kémiai szerkezetek megváltoztatására mind 2D , mind 3D  szimulált környezetben. A kétdimenziós kimenetek illusztrációként vagy adatbázisban való kereséshez használatosak. A háromdimenziós kimenetek, pedig molekulamodellek építésére használhatóak, általában molekulamodellező szoftverek részeként.
+Adatbázisszerű molekula szerkesztők, úgy mint a Leatherface\cite{Leather} és RECAP\cite{recap} megengedik a nagy számú molekulák automatikus változtatását a felhasználó által.
+Jellemzően támogatják a modell valamilyen fájlba való írását és olvasását is. 
+\cite{molekula_editorok}
+
+Jó példa ezen szoftverekre az ACD/ChemSketch. Ez egy olyan interfész, amely képes létrehozni illetve módosítani kémiai kötéseket. Az ACD/LAbs azaz Advanced Chemistry Development, Inc által készített ingyenes program, ami Windows operációs rendszerre elérhető.  A program kettő illetve három dimenzióban is képes a vegyületek szerkezetét megjeleníteni, forgatni. Szinekkel és különböző feliratokkal lehet ellátni a vegyületek alkotóelemeit. Ezen kívül tartalmaz sok ion és molekula sablonokat, feliratozási lehetőségekkel is.\cite{wiki_ACD}
+
+Ehhez hasonló program a ChemDrawPro, ami viszont már nem érhető el ingyenesen. A PerkinElmer által fejlesztet program. Két dimenzióban dinamikusan lehet kötéseket létrehozni/rajzolni. Főleg kutatók használják fejlett és professzionális funkciói miatt. (adatelemzés, dinamikus vegyület rajzolás stb.)\cite{ChemDraw}
+
+De a teljesség értéke nélkül még léteznek online szerkesztők is.
+
+Ilyen például a PubChem, ez is két dimenzióban rajzolja ki a kötéseket a ChemDrawhoz hasonlóan. Viszont emellett a világ legnagyobb ingyenesen hozzáférhető kémai adatbázisa is jelenleg. A rajzoló felülete inkább gyors vázlatokra, illetve kutatási publikációkban használt rajzok elkészítéséhez ajánlott. \cite{PubChem}
+
+%Milyen egyébb kötéseket reprezzentáló program lézetik, és azok hogyan működnek
 
 \chapter{Kémiai háttér}
 
 A játék működéséhez elengedhetetlen az atom felépítésének és a kötések kialakulásának ismerete. 
 \section{Atomok}
-
 Mint tudjuk az atomok protonokból, neutronokból és elektronokból állnak. A protonok töltése pozitív, az elektronoké negatív, a neutronok töltését pedig tekintsük szemlegesnek. Az elektronokon kívül a nukleonok az atom magjában található, míg az elektronok az atom mag körül ''keringenek,, előre meghatározott elektronpályákon.
 
 Ezek az elektronpályák kisebb pályákból/ héjakból állnak. Minden ilyen nagyobb pályán megtalálhatók ezek az al héjak ha az atom rendelkezik megfelelő számú elektronnal. Ezeken az al héjakon meghatározott számú elektron foglalhat helyet.Az s pályán 2 elektron, a p pályán 6 elektron, a d pályán 10 elektron, illetve az f pályán 12 elektron fér el.\cite{sulinet_elektronpályák}
@@ -344,6 +372,13 @@ Emellett az oktatásbeli használhatóságát a programnak akár azzal is lehet 
 Az oktatástól kicsit eltávolodva, és a szoftver dinamikus szerkesztőjére koncentrálva, akár ipari vagy kutatási területre is alkalmaztató lehetne. Ennek viszont legfőbb akadálya az, hogy szükség lenne a továbbfejlesztéshez legalább egy olyan személyre, aki otthonosan mozog a szerves és szervetlen kémia területén. Ugyanis a szakdolgozat írása közben csak az általam felkutatott és saját magamtól megértett kémiai törvényeket tudtam felhasználni.
 \chapter{Ábrák jegyzéke}
 \begin{thebibliography}{1}
+	\bibitem{kémia_modertan} \textsc{ELTE} \url{http://ttomc.elte.hu/sites/default/files/kiadvany/kemiatanitas_modszertana_jegyzet.pdf} (Hozzáférés ideje: 2019.03.27)
+	\bibitem{molekula_editorok} \textsc{Wikipédia} \url{https://en.wikipedia.org/wiki/Molecule_editor} (Hozzáférés ideje: 2019.03.27)
+	\bibitem{Leather}  Kenny, P.W.; Sadowski, J. (2005)\url{https://onlinelibrary.wiley.com/doi/abs/10.1002/3527603743.ch11}(editor: Oprea, T.I.), 271-285 (Wiley).
+	\bibitem{RECAP} Lewell, X.Q.; Judd, D.B; Watson, S.P.; Hann, M.M. (1998) RECAP-Retrosynthetic Combinatorial Analysis Procedure: A Powerful New Technique for Identifying Privileged Molecular Fragments with Useful Applications in Combinatorial Chemistry J. Chem. Inf. Comput. Sci. 38, 511-522. \url{https://pubs.acs.org/doi/10.1021/ci970429i}
+	\bibitem{wiki_ACD} \textsc{Wikipédia} \url{https://en.wikipedia.org/wiki/ACD/ChemSketch}
+	\bibitem{ChemDraw} \url{http://www.perkinelmer.com/product/chemdraw-professional-chemdrawpro}
+	\bibitem{PubChem} \url{https://pubchem.ncbi.nlm.nih.gov}
 	\bibitem{sulinet_elektronpályák} \textsc{Suli Net}: \url{https://tudasbazis.sulinet.hu/hu/termeszettudomanyok/kemia/altalanos-kemia/az-atomok-elektronszerkezete/az-atomok-elektronszerkezete} (Hozzáférés dátuma: 2019.03.15)
 	\bibitem{img_elektronkonfig}  \textsc{Rieth József: Anyagvilág - Háttérinformáció}: \url{http://www.rieth.hu/Vilagom/10b_ElektronSzerk.htm} (hozzáférés ideje: 2019.03.15)
 	\bibitem{wiki_e_szerk} \textsc{Wikipédia}: \url{https://hu.wikipedia.org/wiki/Elektronszerkezet} (Hozzáférés ideje: 2019.03.12).
