@@ -288,7 +288,17 @@ Viszont vigyázat! Amikor a magát a fejlesztő környezetet(Editor) használjuk
 Az Asset-ként menteni kívánt adat, az Editor Tools-ból a ScriptableObjects-be, a lemezen van tárolva, ezért a Session-ök között végig jelen van.
 \cite{unity_scriptable}
 \subsection{Shader}
+A Unityben a \textit{Shader} nem más, mint egy olyan program ami közvetlenül a videókártya szoftverén fut. Ez rajzolja meg a háromdimenziós objektumok háromszöges felbontását, meghatározva ezzel az objektum kinézetét. A 3D modellek lényegében 3D csúcs koordináták gyűjteménye. Összekapcsolva ezeket a csúcsokat háromszögeket alkotnak. Minden iyen csúcs tartalmazhat egy kevés információt, például egy színt, az irányt (a háromszög síkjának normál vektorát), és néhány koordinátát a textúrák leképezésére (UV-adatok).
 
+A modelleket nem lehet  úgynevezett anyag nélkül elkészíteni. Az anyagok olyan burkolók, amelyek árnyékolók at( Shadereket) és azok tulajdonságait tartalmazzák. \cite{unity_shader}
+
+\textbf{KÉP A WEBOLDALRÓL IDE}
+
+Az oktatói játék is tartalmaz egy ilyen árnyékolót, melynek a neve Holographic. Ez a \textit{Shader} egy Brackeys nevű online videócsatorna oktatóvideója alapján készült el. \cite{youtube_shader}
+
+A Create menüben könnyedén lehet \textit{Shader}-t létrehozni a Shader menüpont segítségével. Az így keletkezett objektumra kétszer rákattintva megnyílik a Shader vizuális szerkesztő felülete, ahol egyszerű fogd és húzd metódussal új tulajdonságokat lehet hozzáadni. 
+
+Ebben az esetben egy háttérszín komponenst és egy textúra komponenst illeszkedik az alap Shaderre, úgy, hogy azok kívülről módosíthatóak legyenek. Majd ezután a textúra animációját került szerkesztésre, ahol egy egyszerű Timer noddal (időzítővel), és egy kívülről módosítható szorzandó értékkel tudjuk a textúrát folyamatosan eltolni, ezzel meganimálva azt. Ezen kívül még, hogy jobban kitűnjön a háttértől egy háttérragyogásért felelős Fresnel komponens került be extra tulajdonságként a Shaderbe.
 \subsection{Fémes és inos kötés modellje, és működése}
 Az oktató játék fő felülete a szerkesztő felület, ahol a különböző molekulákat, ionokat és fémes kötéseket lehet létrehozni atomok összehúzásával.
 
@@ -409,5 +419,7 @@ Az oktatástól kicsit eltávolodva, és a szoftver dinamikus szerkesztőjére k
 	\bibitem{unity_asset} \textsc{Unity} \url{https://docs.unity3d.com/Manual/AssetWorkflow.html}  (Hozzáférés ideje: 2019.03.24)
 	\bibitem{kovalens_modell} \url{http://www.sirbuday.hu/rakoczi/molekulaszerkezet.pdf } (Hozzáférés ideje: 2019.03.25)
 	\bibitem{blender} \textsc{Wikipédia} \url{https://hu.wikipedia.org/wiki/Blender_(program)} (Hozzáférés ideje: 2019.03.25)
+	\bibitem{unity_shader} \textsc{Unity} \url{https://unity3d.com/learn/tutorials/topics/graphics/gentle-introduction-shaders} (Hozzáférés ideje: 2019.03.28)
+	\bibitem{youtube_shader} \textsc{Youtube} \url{https://www.youtube.com/watch?v=KGGB5LFEejg&t=182s} (Hozzáférés ideje: 2019.03.28)
 \end{thebibliography}
 \end{document}

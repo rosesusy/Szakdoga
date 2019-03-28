@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.2.2)  27 MAR 2019 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.2.2)  28 MAR 2019 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -867,154 +867,163 @@ Underfull \vbox (badness 1436) has occurred while \output is active []
 Underfull \vbox (badness 1168) has occurred while \output is active []
 
  [20]
-[21]
-Underfull \vbox (badness 4543) has occurred while \output is active []
-
- [22]
-[23]
-Overfull \hbox (16.85744pt too wide) in paragraph at lines 336--337
+[21] [22] [23]
+Overfull \hbox (16.85744pt too wide) in paragraph at lines 346--347
 []\T1/cmr/m/n/12 De sok-szor al-kot-nak V-alakú (víz,kén-dioxid), pi-ra-mi-sos 
 (am-mó-nia), tri-go-ná-lis (Foszfor-
  []
 
-[24] [25]
+
+Underfull \vbox (badness 3039) has occurred while \output is active []
+
+ [24]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+[26]
 6. fejezet.
 
 Underfull \vbox (badness 2495) has occurred while \output is active []
 
- [26
+ [27
 
 ]
-[27]
+[28]
 7. fejezet.
-[28
+[29
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 375.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 385.
 
  (d:/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 []\T1/cmr/m/sc/12 ELTE [][]$\T1/cmtt/m/n/12 http : / / ttomc . elte . hu / site
 s / default / files / kiadvany /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
 []\T1/cmr/m/sc/12 Wikipédia [][]$\T1/cmtt/m/n/12 https : / / en . wikipedia . o
 rg / wiki / Molecule _ editor$[][] \T1/cmr/m/n/12 (Hoz-zá-fé-rés
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 []\T1/cmr/m/sc/12 Suli Net\T1/cmr/m/n/12 : [][]$\T1/cmtt/m/n/12 https : / / tud
 asbazis . sulinet . hu / hu / termeszettudomanyok /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 \T1/cmtt/m/n/12 kemia / altalanos-[]kemia / az-[]atomok-[]elektronszerkezete /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 [][][]$\T1/cmtt/m/n/12 http : / / web . uni-[]miskolc . hu / ~www _ fiz / majar
  / Oktatas / anyagmernok _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 []\T1/cmr/m/sc/12 Suli Net\T1/cmr/m/n/12 : [][]$\T1/cmtt/m/n/12 https : / / tud
 asbazis . sulinet . hu / hu / termeszettudomanyok /
  []
 
 
-Overfull \hbox (11.9014pt too wide) in paragraph at lines 387--388
+Overfull \hbox (11.9014pt too wide) in paragraph at lines 397--398
 \T1/cmtt/m/n/12 kemia / szervetlen-[]kemia / a-[]vegyertek-[]kapcsolata-[]az-[]
 elektronszerkezettel /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 \T1/cmtt/m/n/12 a-[]vegyertek-[]kapcsolata-[]az-[]elektronszerkezettel$[][] \T1
 /cmr/m/n/12 (Hoz-zá-fé-rés ide-je:
  []
 
-[29
+[30
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 [][][]$\T1/cmtt/m/n/12 https : / / chem . libretexts . org / Bookshelves / Phys
 ical _ and _ Theoretical _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 \T1/cmtt/m/n/12 Chemistry _ Textbook _ Maps / Supplemental _ Modules _ (Physica
 l _ and _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 \T1/cmtt/m/n/12 Theoretical _ Chemistry ) /Physical _ Properties _ of _ Matter 
 / Atomic _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 \T1/cmtt/m/n/12 and _ Molecular _ Properties / Electronegativity / Allred-[]Roc
 how _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 []\T1/cmr/m/sc/12 Wikipédia\T1/cmr/m/n/12 : [][]$\T1/cmtt/m/n/12 https : / / en
  . wikipedia . org / wiki / Ray _ tracing _ (graphics)$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 []\T1/cmr/m/sc/12 Unreal [][]$\T1/cmtt/m/n/12 https : / / www . unrealengine . 
 com / en-[]US / blog /
  []
 
 
-Overfull \hbox (9.7279pt too wide) in paragraph at lines 399--400
+Overfull \hbox (9.7279pt too wide) in paragraph at lines 409--410
 \T1/cmtt/m/n/12 dozens-[]of-[]games-[]to-[]be-[]featured-[]in-[]the-[]unreal-[]
 engine-[]booth-[]at-[]gdc-[]2019$[][]
  []
 
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 []\T1/cmr/m/sc/12 Unity [][]$\T1/cmtt/m/n/12 https : / / unity3d . com / unity 
 ? _ga = 2 . 102681794 . 2102771212 .
  []
 
 
-Underfull \hbox (badness 8151) in paragraph at lines 406--407
+Underfull \hbox (badness 8151) in paragraph at lines 416--417
 []\T1/cmr/m/sc/12 Microsoft [][]$\T1/cmtt/m/n/12 https : / / docs . microsoft .
  com / en-[]us / windows / mixed-[]reality /
  []
 
 
-Underfull \hbox (badness 5563) in paragraph at lines 407--408
+Underfull \hbox (badness 5563) in paragraph at lines 417--418
 []\T1/cmr/m/sc/12 Unity [][]$\T1/cmtt/m/n/12 https : / / docs . unity3d . com /
  Manual / Prefabs . html$[][]\T1/cmr/m/n/12 (Hozzáférés ide-je:
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 408--409
+Underfull \hbox (badness 3919) in paragraph at lines 418--419
 []\T1/cmr/m/sc/12 Unity [][]$\T1/cmtt/m/n/12 https : / / docs . unity3d . com /
  Manual / class-[]ScriptableObject . html ?
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 413.
-[31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 413.
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+[]\T1/cmr/m/sc/12 Unity [][]$\T1/cmtt/m/n/12 https : / / unity3d . com / learn 
+/ tutorials / topics / graphics /
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 425.
+[32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 425.
  (./thesis-ekf-template-hu.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 413.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 413.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 425.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 425.
 Package rerunfilecheck Info: File `thesis-ekf-template-hu.out' has not changed.
 
 (rerunfilecheck)             Checksum: A4A97C85510123A880DECD9B7C80566E;3579.
@@ -1024,10 +1033,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 12368 strings out of 492980
- 174156 string characters out of 6136208
- 268949 words of memory out of 5000000
- 15685 multiletter control sequences out of 15000+600000
+ 12373 strings out of 492980
+ 174229 string characters out of 6136208
+ 270023 words of memory out of 5000000
+ 15687 multiletter control sequences out of 15000+600000
  20948 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,7n,35p,1174b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1057,10 +1066,10 @@ nts/type1/public/cm-super/sfrm1440.pfb><d:/texlive/2017/texmf-dist/fonts/type1/
 public/cm-super/sfsx2488.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/cm-
 super/sfti1200.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt
 1200.pfb>
-Output written on thesis-ekf-template-hu.pdf (31 pages, 1238879 bytes).
+Output written on thesis-ekf-template-hu.pdf (32 pages, 1242770 bytes).
 PDF statistics:
- 554 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
- 99 named destinations out of 1000 (max. 500000)
+ 565 PDF objects out of 1000 (max. 8388607)
+ 481 compressed objects within 5 object streams
+ 102 named destinations out of 1000 (max. 500000)
  192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

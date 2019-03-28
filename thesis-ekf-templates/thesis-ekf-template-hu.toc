@@ -16,7 +16,7 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Men\IeC {\"u}}{18}{subsection.5.2.1}
 \select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Peri\IeC {\'o}dusos rendszer}{19}{subsection.5.2.2}
 \select@language {magyar} \contentsline {subsection}{\numberline {5.2.3}Shader}{21}{subsection.5.2.3}
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.4}F\IeC {\'e}mes \IeC {\'e}s inos k\IeC {\"o}t\IeC {\'e}s modellje, \IeC {\'e}s m\IeC {\H u}k\IeC {\"o}d\IeC {\'e}se}{21}{subsection.5.2.4}
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.4}F\IeC {\'e}mes \IeC {\'e}s inos k\IeC {\"o}t\IeC {\'e}s modellje, \IeC {\'e}s m\IeC {\H u}k\IeC {\"o}d\IeC {\'e}se}{22}{subsection.5.2.4}
 \select@language {magyar} \contentsline {subsection}{\numberline {5.2.5}Kovalens k\IeC {\"o}t\IeC {\'e}s}{23}{subsection.5.2.5}
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Tov\IeC {\'a}bbfejleszt\IeC {\'e}si lehet\IeC {\H o}s\IeC {\'e}gek}{26}{chapter.6}
-\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\'A}br\IeC {\'a}k jegyz\IeC {\'e}ke}{28}{chapter.7}
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Tov\IeC {\'a}bbfejleszt\IeC {\'e}si lehet\IeC {\H o}s\IeC {\'e}gek}{27}{chapter.6}
+\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\'A}br\IeC {\'a}k jegyz\IeC {\'e}ke}{29}{chapter.7}
